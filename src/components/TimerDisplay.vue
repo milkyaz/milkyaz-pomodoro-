@@ -34,12 +34,12 @@ function updatePomodoroDisplay() {
 </script>
 
 <template>
-  <div class="flex-col justify-center items-center w-full mt-30">
+  <div class="flex-col justify-center items-center w-full mt-30 ">
     <div class="text-center mb-5">{{ display }}</div>
-    <div class="pomodoro-btn">
-      <button @click="startTimer()">Start</button>
-      <button @click="stopTimer()">Stop</button>
-      <button @click="resetTimer()">Reset</button>
+    <div class="flex gap-5 justify-center items-center w-full">
+      <button class="btn btn-outline btn-info" @click="startTimer()">Start</button>
+      <button class="btn btn-outline btn-info" @click="stopTimer()">Stop</button>
+      <button class="btn btn-outline btn-info" @click="resetTimer()">Reset</button>
     </div>
 
   </div>
@@ -53,6 +53,7 @@ function updatePomodoroDisplay() {
   display: flex;
   justify-content: center;
 }
+
 button {
   width: 100px;
 }
