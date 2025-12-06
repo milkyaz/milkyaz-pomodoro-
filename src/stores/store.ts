@@ -5,7 +5,7 @@ export const useMainStore = defineStore('store', () => {
   const numPomodoro = ref(10);
   const timerId = ref(0);
   const display = computed(() => {
-    return numPomodoro.value;
+  return display.value = numPomodoro.value < 10 ? `00:0${numPomodoro.value}` : `00:${numPomodoro.value}`;
   })
 
   function startTimer() {
@@ -27,7 +27,7 @@ export const useMainStore = defineStore('store', () => {
   }
 
   function updatePomodoroDisplay() {
-    return display.value = numPomodoro.value < 10 ? `00:0${numPomodoro.value}` : `00:${numPomodoro.value}`;
+
   }
 
   return {

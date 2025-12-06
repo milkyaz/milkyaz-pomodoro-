@@ -7,9 +7,9 @@ const mainStore = useMainStore();
 
 <template>
   <div class="flex gap-5">
-    <button class="btn btn-outline btn-info" @click="mainStore.startTimer()">Start</button>
-    <button class="btn btn-outline btn-info" @click="mainStore.stopTimer()">Stop</button>
-    <button class="btn btn-outline btn-info" @click="mainStore.resetTimer()">Reset</button>
+    <button class="btn btn-outline btn-info btn-lg" @click="mainStore.startTimer()">Start</button>
+    <button class="btn btn-outline btn-info btn-lg" @click="mainStore.stopTimer()">Stop</button>
+    <button class="btn btn-outline btn-info btn-lg" @click="mainStore.resetTimer()">Reset</button>
   </div>
 </template>
 
