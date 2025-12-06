@@ -1,1 +1,9 @@
-@import "../node_modules/tailwindcss/dist/lib.d.mts";
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, night --prefersdark;
+  root: ":root";
+  include: ;
+  exclude: ;
+  prefix: ;
+  logs: true;
+}
