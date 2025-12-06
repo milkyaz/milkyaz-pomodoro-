@@ -34,8 +34,8 @@ function updatePomodoroDisplay() {
 </script>
 
 <template>
-  <div class="wrapper">
-    <div class="pomodoro">{{ display }}</div>
+  <div class="flex-col justify-center items-center w-full mt-30">
+    <div class="text-center mb-5">{{ display }}</div>
     <div class="pomodoro-btn">
       <button @click="startTimer()">Start</button>
       <button @click="stopTimer()">Stop</button>
@@ -47,15 +47,8 @@ function updatePomodoroDisplay() {
 </template>
 
 <style scoped>
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
-.pomodoro {
-  text-align: center;
-}
+
 .pomodoro-btn {
   display: flex;
   justify-content: center;
