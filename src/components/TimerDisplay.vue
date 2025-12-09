@@ -16,7 +16,9 @@ const mainStore = useMainStore();
       <div class="cone-only flex justify-center pl-10 pt-2 text-center relative">{{ mainStore.display }}</div>
     </div>
     <div class="flex gap-5 justify-center items-center w-full">
-      <Button/>
+      <Button @click="mainStore.startTimer" val="START" />
+      <Button @click="mainStore.stopTimer" val="STOP" />
+      <Button @click="mainStore.resetTimer" val="RESET" />
     </div>
   </div>
 </template>

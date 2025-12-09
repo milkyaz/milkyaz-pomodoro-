@@ -1,15 +1,20 @@
 <script setup lang="ts">
-import {useMainStore} from "@/stores/store.ts";
 
-const mainStore = useMainStore();
+const emit = defineEmits(['click']);
+
+const props = defineProps<{
+  val?: string;
+}>()
+
+function handleClick() {
+  emit('click');
+}
 
 </script>
 
 <template>
   <div class="flex gap-5">
-    <button class="btn btn-outline btn-info btn-lg" @click="mainStore.startTimer()">Start</button>
-    <button class="btn btn-outline btn-info btn-lg" @click="mainStore.stopTimer()">Stop</button>
-    <button class="btn btn-outline btn-info btn-lg" @click="mainStore.resetTimer()">Reset</button>
+    <button class="btn btn-outline btn-info btn-lg" @click="handleClick">{{ props.val }}</button>
   </div>
 </template>
 
