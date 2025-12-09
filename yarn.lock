@@ -1597,6 +1597,11 @@ csstype@^3.1.3:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.2.3.tgz#ec48c0f3e993e50648c86da559e2610995cf989a"
   integrity sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==
 
+daisyui@^5.5.8:
+  version "5.5.8"
+  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-5.5.8.tgz#3cc62da7fd1bef7b3ca89cefa698aceed7c2018a"
+  integrity sha512-6psL9jIEOFOw68V10j/BKCWcRgx8dh81mmNxShr+g7HDM6UHNoPharlp9zq/PQkHNuGU1ZQsajR3HgpvavbRKQ==
+
 data-urls@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/data-urls/-/data-urls-6.0.0.tgz#95a7943c8ac14c1d563b771f2621cc50e8ec7744"
