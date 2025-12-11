@@ -10,10 +10,10 @@ const mainStore = useMainStore();
 <template>
   <div class="flex-col justify-center items-center mt-30 ">
     <div class="flex justify-center mb-10 text-6xl">
-      <Icon class="rotate-225 absolute left-[806px]"
+      <Icon class="rotate-225 absolute left-[565px]"
             icon="noto:flashlight"
             width="90"/>
-      <div class="cone-only flex justify-center pl-10 pt-2 text-center relative">{{ mainStore.display }}</div>
+      <div class="cone-only flex justify-center pl-10 pt-3 text-center relative">{{ mainStore.display }}</div>
     </div>
     <div class="flex gap-5 justify-center items-center w-full">
       <Button @click="mainStore.startTimer" val="START" />
@@ -31,7 +31,7 @@ button {
 /* Тёплый ламповый свет для Pomodoro */
 /* Просто конус без фона на весь экран */
 .cone-only {
-  width: 10%;
+  width: 14%;
   height: 100px;
   background: radial-gradient(
     ellipse at 251% 44%,
