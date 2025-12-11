@@ -1,60 +1,43 @@
 <script setup lang="ts">
+import { useMainStore } from "@/stores/store.ts";
+import Button from "@/components/Button.vue";
+import { Icon } from '@iconify/vue'
 
-import {computed, ref} from "vue";
+const mainStore = useMainStore();
 
-const numPomodoro = ref(10);
-const timerId = ref(0);
-const display = computed(() => {
-  return numPomodoro.value;
-})
-
-function startTimer() {
-
-  if (numPomodoro.value >= 0) {
-    updatePomodoroDisplay();
-    numPomodoro.value--;
-    timerId.value = setTimeout(startTimer, 1000);
-  }
-
-}
-
-function stopTimer() {
-  return clearTimeout(timerId.value)
-}
-
-function resetTimer() {
-  numPomodoro.value = 10;
-  display.value = `00:${numPomodoro.value}`;
-  stopTimer();
-}
-
-function updatePomodoroDisplay() {
-  return display.value = numPomodoro.value < 10 ? `00:0${numPomodoro.value}` : `00:${numPomodoro.value}`;
-}
 </script>
 
 <template>
-  <div class="flex-col justify-center items-center w-full mt-30 ">
-    <div class="text-center mb-5">{{ display }}</div>
-    <div class="flex gap-5 justify-center items-center w-full">
-      <button class="btn btn-outline btn-info" @click="startTimer()">Start</button>
-      <button class="btn btn-outline btn-info" @click="stopTimer()">Stop</button>
-      <button class="btn btn-outline btn-info" @click="resetTimer()">Reset</button>
+  <div class="flex-col justify-center items-center mt-30 ">
+    <div class="flex justify-center mb-10 text-6xl">
+      <Icon class="rotate-225 absolute left-[565px]"
+            icon="noto:flashlight"
+            width="90"/>
+      <div class="cone-only flex justify-center pl-10 pt-3 text-center relative">{{ mainStore.display }}</div>
     </div>
-
+    <div class="flex gap-5 justify-center items-center w-full">
+      <Button @click="mainStore.startTimer" val="START" />
+      <Button @click="mainStore.stopTimer" val="STOP" />
+      <Button @click="mainStore.resetTimer" val="RESET" />
+    </div>
   </div>
-
 </template>
 
 <style scoped>
 
-
-.pomodoro-btn {
-  display: flex;
-  justify-content: center;
-}
-
 button {
   width: 100px;
+}
+/* Тёплый ламповый свет для Pomodoro */
+/* Просто конус без фона на весь экран */
+.cone-only {
+  width: 14%;
+  height: 100px;
+  background: radial-gradient(
+    ellipse at 251% 44%,
+    rgba(279, 250, 210, 3.8) 0,
+    rgba(255, 254, 190, 0.4) 46%,
+    transparent 70%
+  )
 }
 </style>
