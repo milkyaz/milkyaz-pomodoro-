@@ -13,7 +13,6 @@ export const useMainStore = defineStore('store', () => {
 
   function startTimer() {
     if (numPomodoro.value > 0) {
-      updatePomodoroDisplay();
       numPomodoro.value--;
       timerId.value = setTimeout(startTimer, 1000);
     }
@@ -28,9 +27,6 @@ export const useMainStore = defineStore('store', () => {
     stopTimer();
   }
 
-  function updatePomodoroDisplay() {
-
-  }
 
   return {
     display,
