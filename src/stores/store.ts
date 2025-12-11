@@ -30,6 +30,8 @@ export const useMainStore = defineStore('store', () => {
 
   return {
     display,
+    numPomodoro,
+    timerId,
     startTimer,
     stopTimer,
     resetTimer
