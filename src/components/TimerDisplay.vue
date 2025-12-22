@@ -10,7 +10,7 @@ const mainStore = useMainStore()
   <div class="flex-col justify-center items-center mt-30">
     <Button class="mb-10" @click="mainStore.increment" icon="material-symbols:add" />
     <div class="flex justify-center mb-10 text-6xl">
-      <Icon class="rotate-225 absolute left-[565px]" icon="noto:flashlight" width="90" />
+      <Icon class="rotate-225 absolute left-[550px]" icon="noto:flashlight" width="90" />
       <div class="cone-only flex justify-center pl-10 pt-3 text-center relative">
         {{ mainStore.display }}
       </div>
