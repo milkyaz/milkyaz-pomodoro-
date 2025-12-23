@@ -13,6 +13,7 @@ export const useMainStore = defineStore('store', () => {
     return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
   });
   const isDisableBtn = ref(false);
+  const isSound = ref(false);
   const { startTicking } = useClockSound();
 
   function increment() {
@@ -52,7 +53,7 @@ export const useMainStore = defineStore('store', () => {
   function startTimer() {
     if (numPomodoro.value > 0) {
       isDisableBtn.value = true;
-      startTicking();
+      if(isSound.value) startTicking();
       numPomodoro.value--;
       timerId.value = setTimeout(startTimer, 1000);
     } else if (numPomodoro.value <= 0) {
@@ -76,6 +77,7 @@ export const useMainStore = defineStore('store', () => {
     numPomodoro,
     timerId,
     isDisableBtn,
+    isSound,
     startTimer,
     stopTimer,
     resetTimer,
