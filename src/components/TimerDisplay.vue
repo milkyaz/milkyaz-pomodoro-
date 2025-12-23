@@ -8,14 +8,41 @@ const mainStore = useMainStore()
 
 <template>
   <div class="flex-col justify-center items-center mt-30">
-    <Button class="mb-10" @click="mainStore.increment" icon="material-symbols:add" />
+    <div class="flex flex-row justify-center items-center gap-5">
+      <div>
+        <p class="text-center text-lg">1 sec</p>
+        <Button class="mb-10" @click="mainStore.increment" icon="material-symbols:add" />
+      </div>
+      <div>
+        <p class="text-center text-lg">10 sec</p>
+        <Button class="mb-10" @click="mainStore.addTenNum" icon="material-symbols:add" />
+      </div>
+      <div>
+        <p class="text-center text-lg">1 min</p>
+        <Button class="mb-10" @click="mainStore.addMinute" icon="material-symbols:add" />
+      </div>
+    </div>
     <div class="flex justify-center mb-10 text-6xl">
       <Icon class="rotate-225 absolute left-[550px]" icon="noto:flashlight" width="90" />
       <div class="cone-only flex justify-center pl-10 pt-3 text-center relative">
         {{ mainStore.display }}
       </div>
     </div>
-    <Button class="mb-10" @click="mainStore.decrement" icon="material-symbols:remove" />
+    <div class="flex justify-center mb-10 gap-5">
+      <div>
+        <p class="text-center text-lg">1 sec</p>
+        <Button class="mb-10" @click="mainStore.decrement" icon="material-symbols:remove" />
+      </div>
+      <div>
+        <p class="text-center text-lg">10 sec</p>
+        <Button class="mb-10" @click="mainStore.removeTenNum" icon="material-symbols:remove" />
+      </div>
+      <div>
+        <p class="text-center text-lg">1 min</p>
+        <Button class="mb-10" @click="mainStore.removeMinute" icon="material-symbols:remove" />
+      </div>
+    </div>
+
     <div class="flex gap-5 justify-center items-center w-full">
       <Button @click="mainStore.startTimer" val="START" />
       <Button @click="mainStore.stopTimer" val="STOP" />
