@@ -1,20 +1,60 @@
 <script setup lang="ts">
-import { useMainStore } from "@/stores/store.ts";
-import Button from "@/components/Button.vue";
+import { useMainStore } from '@/stores/store.ts'
+import Button from '@/components/Button.vue'
 import { Icon } from '@iconify/vue'
 
-const mainStore = useMainStore();
-
+const mainStore = useMainStore()
 </script>
 
 <template>
-  <div class="flex-col justify-center items-center mt-30 ">
-    <div class="flex justify-center mb-10 text-6xl">
-      <Icon class="rotate-225 absolute left-[565px]"
-            icon="noto:flashlight"
-            width="90"/>
-      <div class="cone-only flex justify-center pl-10 pt-3 text-center relative">{{ mainStore.display }}</div>
+  <div>
+    <label class="swap text-info">
+      <input type="checkbox" v-model="mainStore.isSound" />
+      <Icon class="swap-on fill-current" icon="akar-icons:sound-on" width="35" />
+      <Icon class="swap-off fill-current" icon="akar-icons:sound-off" width="35" />
+    </label>
+  </div>
+  <div class="flex-col justify-center items-center mt-30">
+    <div class="flex flex-row justify-center items-center gap-5">
+      <div>
+        <p class="text-center text-lg">1 sec</p>
+        <Button class="mb-10" @click="mainStore.increment" icon="material-symbols:add" />
+      </div>
+      <div>
+        <p class="text-center text-lg">10 sec</p>
+        <Button class="mb-10" @click="mainStore.addTenNum" icon="material-symbols:add" />
+      </div>
+      <div>
+        <p class="text-center text-lg">1 min</p>
+        <Button class="mb-10" @click="mainStore.addMinute" icon="material-symbols:add" />
+      </div>
     </div>
+<!--    <label class="swap relative text-info left-[930px] bottom-[179px]">-->
+<!--      <input type="checkbox" v-model="isSound" />-->
+<!--      <Icon class="swap-on fill-current" icon="akar-icons:sound-on" width="35" />-->
+<!--     <Icon class="swap-off fill-current" icon="akar-icons:sound-off" width="35" />-->
+<!--    </label>-->
+    <div class="flex justify-center mb-10 text-6xl">
+      <Icon class="rotate-225 absolute left-[550px]" icon="noto:flashlight" width="90" />
+      <div class="cone-only flex justify-center pl-10 pt-3 text-center relative">
+        {{ mainStore.display }}
+      </div>
+    </div>
+    <div class="flex justify-center mb-10 gap-5">
+      <div>
+        <p class="text-center text-lg">1 sec</p>
+        <Button class="mb-10" @click="mainStore.decrement" icon="material-symbols:remove" />
+      </div>
+      <div>
+        <p class="text-center text-lg">10 sec</p>
+        <Button class="mb-10" @click="mainStore.removeTenNum" icon="material-symbols:remove" />
+      </div>
+      <div>
+        <p class="text-center text-lg">1 min</p>
+        <Button class="mb-10" @click="mainStore.removeMinute" icon="material-symbols:remove" />
+      </div>
+    </div>
+
     <div class="flex gap-5 justify-center items-center w-full">
       <Button @click="mainStore.startTimer" val="START" />
       <Button @click="mainStore.stopTimer" val="STOP" />
@@ -24,10 +64,10 @@ const mainStore = useMainStore();
 </template>
 
 <style scoped>
-
 button {
   width: 100px;
 }
+
 /* Тёплый ламповый свет для Pomodoro */
 /* Просто конус без фона на весь экран */
 .cone-only {
@@ -38,6 +78,6 @@ button {
     rgba(279, 250, 210, 3.8) 0,
     rgba(255, 254, 190, 0.4) 46%,
     transparent 70%
-  )
+  );
 }
 </style>
